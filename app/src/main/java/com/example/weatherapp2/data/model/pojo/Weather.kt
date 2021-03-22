@@ -9,12 +9,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 package com.example.weatherapp2.data.model.pojo
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Weather (
 
 	@SerializedName("id") val id : Int,
 	@SerializedName("main") val main : String,
 	@SerializedName("description") val description : String,
 	@SerializedName("icon") val icon : String
-)
+) : Parcelable

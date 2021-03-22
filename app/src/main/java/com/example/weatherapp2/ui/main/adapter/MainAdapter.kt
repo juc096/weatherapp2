@@ -1,5 +1,6 @@
 package com.example.weatherapp2.ui.main.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.weatherapp2.R
 import com.example.weatherapp2.data.model.WeatherInfo
+import com.example.weatherapp2.ui.main.view.MoreInfo
 
 
 import kotlinx.android.synthetic.main.item_layout.view.*
@@ -52,4 +54,7 @@ class MainAdapter(private val weatherInfos: ArrayList<WeatherInfo>,
             add(weatherInfo)
         }
     }
+
+
+
 }

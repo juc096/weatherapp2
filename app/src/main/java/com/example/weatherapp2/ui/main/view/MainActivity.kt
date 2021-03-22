@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
         setupUI()
         setupObservers(getCities())
-        Toast.makeText(this, "hi", Toast.LENGTH_LONG).show()
+
 
     }
 
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupUI() {
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MainAdapter(arrayListOf()) {item -> }
+        adapter = MainAdapter(arrayListOf()) {item ->displayMoreInfo(item) }
         recyclerView.addItemDecoration(
             DividerItemDecoration(
                 recyclerView.context,
@@ -91,10 +91,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*private fun displayMoreInfo(weatherInfo: WeatherInfo) {
+    private fun displayMoreInfo(weatherInfo: WeatherInfo) {
         val intent = Intent(this@MainActivity, MoreInfo::class.java)
-        intent.putExtra("high", weatherInfo.main.temp_max)
-        intent.putExtra("low", weatherInfo.main.temp_min)
-        intent.putExtra()
-    }*/
+        intent.putExtra("weatherInfo", weatherInfo)
+        startActivity(intent)
+    }
 }
